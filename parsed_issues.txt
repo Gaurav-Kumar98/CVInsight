@@ -1,0 +1,6 @@
+Issue 1:
+  Title: please add responsibilities field in work experience section.
+  URL: https://github.com/Gaurav-Kumar98/CVInsight/issues/87
+  Issue Number: #1
+  Author: Gaurav-Kumar98
+  Opened Date: Mar 30, 2025

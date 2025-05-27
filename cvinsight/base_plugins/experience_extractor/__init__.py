@@ -39,6 +39,7 @@ You are an expert resume parser. Your task is to extract work experience details
 - End Date: in dd/mm/yyyy format. If the resume does not provide the day or month, default the missing parts to "01". If you encounter Present then use the current date, i.e. {today}.
 - Location
 - Role: Extract ONLY the job title (e.g., "Data Engineer", "Software Developer", "Project Manager"). Do NOT include project information or descriptions in this field - just the official job title.
+- Responsibilities: Extract a list of key responsibilities or achievements for the role. This should be a list of strings. If no specific responsibilities are listed, return an empty list.
 
 IMPORTANT: Create only ONE entry per company, even if the person worked on multiple projects or had multiple roles at the same company. If there were multiple positions at the same company, use the most senior or most recent role in the Role field. The earliest start date and the latest end date should be used for the company's overall employment period.
 
@@ -109,5 +110,6 @@ Text:
                 exp["end_date"] = exp.get("end_date") or ""
                 exp["location"] = exp.get("location")  # Can be None
                 exp["role"] = exp.get("role") or ""
+                exp["responsibilities"] = exp.get("responsibilities") or []
         
         return processed_result, token_usage 

@@ -41,6 +41,7 @@ class Experience(BaseModel):
     location: Optional[str] = None
     start_date: str
     end_date: str
+    responsibilities: Optional[List[str]] = Field(default_factory=list)
 
 class ResumeWorkExperience(BaseModel):
     """Model for work experience information"""
